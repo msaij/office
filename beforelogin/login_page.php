@@ -7,7 +7,10 @@
     <title>Document</title>
 </head>
     <link rel="stylesheet" type="text/css" href="jcss_forbefore/loginform.css">
-    <?php include 'base_beforelogin.php'; include 'logincheck.php'?>
+    <?php
+    include 'base_beforelogin.php';
+    include 'logincheck.php';
+    ?>
 
 <body>
 

@@ -8,12 +8,13 @@
 </head>
     <?php
         include 'base_beforelogin.php';
+        include 'signupcheck.php';
     ?>
     <link rel="stylesheet" href="jcss_forbefore/signup.css">
 <body>
 
 <div class="signupform">
-    <form name="signup-form" action="signupform.php" method="post">
+    <form name="signup-form" action="signupform()" method="post">
 
     <div><label for="firstname">First Name</label>
         <input type="text" name="firstname" required></div>
