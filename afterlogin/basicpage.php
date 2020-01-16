@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- basic page of afterlogin -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,7 +10,7 @@
 </head>
     <style>
         .nav-link{
-            color: black;   
+            color: black;
         }
         .nav{
             border-bottom: solid 1px black;
@@ -18,14 +19,14 @@
     </style>
 <body>
 <ul class="nav justify-content-start">
-    
+
     <li class="nav-item">
         <a class="nav-link active" href="login_home.php">Home</a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="login_products.php" aria-disabled="true">Your Products</a>
     </li>
-        
-</ul> 
+
+</ul>
 </body>
 </html>
