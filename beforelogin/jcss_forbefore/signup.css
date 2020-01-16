@@ -1,0 +1,7 @@
+.signupform div{
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  margin-left: 20px;
+  padding-top: 5px;
+}
