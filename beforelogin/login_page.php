@@ -8,9 +8,9 @@
 </head>
     <link rel="stylesheet" type="text/css" href="jcss_forbefore/loginform.css">
     <?php include 'base_beforelogin.php'; include 'logincheck.php'?>
-    
+
 <body>
-    
+
     <div class="loginform">
         <form id="login" action="credcheck()" method="POST">
         Email:
