@@ -18,7 +18,7 @@
     <div class="cid"><label for="compid">Company id</label>
         <input type="text" name="compid" required></div>
     <div class="lid"><label for="locid">Location id</label>
-        <input type="number" min="0" name="locid" required></div>
+        <input type="number" min="1" name="locid" required></div>
     <div class="fn"><label for="firstname">First Name</label>
         <input type="text" name="firstname" required></div>
     <div class="ln"><label for="lastname">Last Name</label>
