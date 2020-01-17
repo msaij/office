@@ -9,29 +9,28 @@
     <?php
         include 'base_beforelogin.php';
         include 'signupcheck.php';
+        $signupform=signupform();
     ?>
     <link rel="stylesheet" href="jcss_forbefore/signup.css">
 <body>
 
 <div class="signupform">
-    <form name="signup-form" action="signupform()" method="post">
+    <form name="signup-form" action="$signupform" method="post">
 
-    <div><label for="firstname">First Name</label>
+    <div class="fn"><label for="firstname">First Name</label>
         <input type="text" name="firstname" required></div>
-
-    <div><label for="lastname">Last Name</label>
+    <div class="ln"><label for="lastname">Last Name</label>
         <input type="text" name="lastname" required></div>
-
-    <div><label for="email">Email</label>
+    <div class="pn"><label for="phonenumber">Phone Number</label>
+        <input type="tel" name="phonenumber" pattern="[6-9]{1}[0-9]{9}" required></div>
+    <div class="mail"><label for="email">Email</label>
         <input type="text" name="email" required></div>
-
-    <div><label for="pwd1">Password</label>
+    <div class="pd1"><label for="pwd1">Password</label>
         <input type="password" name="pwd" required></div>
-
-    <div><label for="pwd2">Repeat-Password</label>
+    <div class="pd2"><label for="pwd2">Repeat-Password</label>
         <input type="password" name="rep-pwd" required></div>
-
-    <div><button type="submit" name="submitsign">Submit</button></div>
+    <div class="submitsignup">
+        <button type="submit" name="submitsign">Submit</button></div>
 
     </form>
 </div>
