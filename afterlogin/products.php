@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-    
+
 <script src="jcss/itemslist.js"></script>
     <style>
         .search{
@@ -15,27 +15,24 @@
         #byname{
             width: 30%;
             border-width:1px;
-            border-radius: 3px;    
+            border-radius: 3px;
         }
         table th,td{
             width: 130px;
             text-align:left;
         }
     </style>
-    
+
 <body>
     <?php include 'basicpage.php'; include 'items_table.php'; ?>
-    
+
 <!-- search in table -->
     <div class="search">
         <form id="searchform">
-            
             <input type="text" name="byname" id="byname" placeholder="Product name.." onkeyup="searchbyname()"/>
-            
         </form>
     </div>
-    
-    
+
 <!-- the table -->
     <div class="table">
         <table id="allitems">
@@ -46,9 +43,9 @@
                 <th>Price</th>
                 <th>Case quantity</th>
             </tr>
-           <?php $displaytable=table(); ?> 
+           <?php $displaytable=table(); ?>
         </table>
-    </div>   
+    </div>
 
 
 </body>

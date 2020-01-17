@@ -21,10 +21,10 @@
 <ul class="nav justify-content-start">
 
     <li class="nav-item">
-        <a class="nav-link active" href="login_home.php">Home</a>
+        <a class="nav-link active" href="home.php">Home</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="login_products.php" aria-disabled="true">Your Products</a>
+        <a class="nav-link" href="products.php" aria-disabled="true">Your Products</a>
     </li>
 
 </ul>
