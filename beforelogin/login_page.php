@@ -11,13 +11,15 @@
     include 'base_beforelogin.php';
     include 'logincheck.php';
     ?>
-
+    <style>
+    ::placeholder{ font-size: 12px; opacity:0.5; }
+    </style>
 <body>
 
     <div class="loginform">
         <form id="login" action="credcheck()" method="POST">
         Email:
-        <input type="email" name="email" placeholder="emailId@dot.com">
+        <input type="email" name="email" placeholder="blahblah@dot.com">
         Password:
         <input type="password" name="pwd">
         <br>

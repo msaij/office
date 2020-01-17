@@ -22,5 +22,4 @@
   }
   mysqli_close($conn);
 
-
 ?>
