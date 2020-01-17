@@ -9,7 +9,6 @@
     <link rel="stylesheet" type="text/css" href="jcss_forbefore/loginform.css">
     <?php
     include 'base_beforelogin.php';
-    include 'logincheck.php';
     ?>
     <style>
     ::placeholder{ font-size: 12px; opacity:0.5; }
@@ -17,7 +16,7 @@
 <body>
 
     <div class="loginform">
-        <form id="login" action="credcheck()" method="POST">
+        <form id="login" action="logincheck.php" method="POST">
         Email:
         <input type="email" name="email" placeholder="blahblah@dot.com">
         Password:
