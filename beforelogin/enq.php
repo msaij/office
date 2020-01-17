@@ -15,8 +15,7 @@
     }
     else
     {
-       # header("location: enq.html");
-        #'<script type="text/JavaScript">  prompt("GeeksForGeeks"); </script>';
+       #header("location: enquiries.php");
     }
     mysqli_close($conn);
 

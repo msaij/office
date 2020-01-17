@@ -8,15 +8,17 @@
 </head>
     <?php
         include 'base_beforelogin.php';
-        include 'signupcheck.php';
-        $signupform=signupform();
     ?>
     <link rel="stylesheet" href="jcss_forbefore/signup.css">
 <body>
 
 <div class="signupform">
-    <form name="signup-form" action="$signupform" method="post">
+    <form name="signup-form" action="signupcheck.php" method="post">
 
+    <div class="cid"><label for="compid">Company id</label>
+        <input type="text" name="compid" required></div>
+    <div class="lid"><label for="locid">Location id</label>
+        <input type="number" min="0" name="locid" required></div>
     <div class="fn"><label for="firstname">First Name</label>
         <input type="text" name="firstname" required></div>
     <div class="ln"><label for="lastname">Last Name</label>
@@ -31,7 +33,7 @@
         <input type="password" name="rep-pwd" required></div>
     <div class="submitsignup">
         <button type="submit" name="submitsign">Submit</button></div>
-
+        
     </form>
 </div>
 
