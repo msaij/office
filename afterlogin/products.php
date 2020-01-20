@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 
-<script src="jcss/itemslist.js"></script>
+<script src="jcss_forafter/itemslist_search.js"></script>
     <style>
         .search{
             margin-bottom: 20px;
@@ -24,7 +24,10 @@
     </style>
 
 <body>
-    <?php include 'basicpage.php'; include 'items_table.php'; ?>
+    <?php
+    include 'basicpage.php';
+    include 'products_table.php';
+    ?>
 
 <!-- search in table -->
     <div class="search">
@@ -46,7 +49,6 @@
            <?php $displaytable=table(); ?>
         </table>
     </div>
-
 
 </body>
 </html>

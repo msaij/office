@@ -6,7 +6,6 @@
 
   $sql="select email,pass from signup where email='$em' and pass='$pa'";
 
-
   if(mysqli_num_rows(mysqli_query($conn,$sql))==1)
   {
     header("location: ../afterlogin/home.php");
