@@ -18,15 +18,15 @@
         }
     </style>
 <body>
-
 <ul class="nav justify-content-start">
+
     <li class="nav-item">
         <a class="nav-link active" href="home.php">Home</a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="products.php" aria-disabled="true">Your Products</a>
     </li>
-</ul>
 
+</ul>
 </body>
 </html>

@@ -18,9 +18,10 @@
     <div class="loginform">
         <form id="login" action="logincheck.php" method="POST">
         Email:
-        <input type="email" name="email" placeholder="blahblah@dot.com" required>
+        <input type="email" name="email" placeholder="blahblah@dot.com">
         Password:
-        <input type="password" name="pwd" required><br>
+        <input type="password" name="pwd">
+        <br>
         <button type="submit" name="submitlogin">Login</button>
         </form>
     </div>
