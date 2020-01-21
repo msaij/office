@@ -3,7 +3,7 @@
 function table()
 {
 include 'db.php';
-$sql = "SELECT name,category,brand,price_per_unit,qty_in_case FROM items";
+$sql = "SELECT name,category,brand,price_per_unit,qty_in_case from items where id='1'";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0)
@@ -22,7 +22,7 @@ if (mysqli_num_rows($result) > 0)
 }
 else
 {
-    echo "0 results";
+    echo "No results";
 }
     return;
 }
