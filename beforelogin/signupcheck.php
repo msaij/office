@@ -11,14 +11,13 @@
   $passrep=mysqli_real_escape_string($conn,$_REQUEST['rep-pwd']);
 
   $sql="insert into signup (cid,loc_id,firstname,lastname,phone,email,pass,passrep) values ('$cid','$lid','$fn','$ln','$pn','$mail','$pass','$passrep')";
-
   if(mysqli_query($conn,$sql))
   {
     header ("location: login_page.php");
   }
   else
   {
-    # header ("location: signup.php");
+     header ("location: signup.php");
   }
   mysqli_close($conn);
 
