@@ -1,6 +1,7 @@
 <?php
   //code to verify login credentials
-  include 'db_config.php';
+  require 'db_config.php';
+
   $em=mysqli_real_escape_string($conn,$_REQUEST['email']);
   $pa=mysqli_real_escape_string($conn,$_REQUEST['pwd']);
 

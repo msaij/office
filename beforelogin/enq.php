@@ -1,7 +1,7 @@
 <?php
 
 # configuration for db
-    include 'db_config.php';
+    require 'db_config.php';
     $name = mysqli_real_escape_string($conn, $_REQUEST['name']);
     $phone = mysqli_real_escape_string($conn, $_REQUEST['phone']);
     $email = mysqli_real_escape_string($conn, $_REQUEST['email']);

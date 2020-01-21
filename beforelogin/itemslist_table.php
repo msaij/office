@@ -1,7 +1,7 @@
 <?php
 function table()
 {
-include 'db_config.php';
+require 'db_config.php';
 $sql = "SELECT name,category,brand,price_per_unit,qty_in_case FROM items";
 $result = mysqli_query($conn, $sql);
 
