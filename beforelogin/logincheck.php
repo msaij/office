@@ -16,4 +16,6 @@
     header("location: login_page.php");
   }
 
+
+mysqli_close($conn);
 ?>

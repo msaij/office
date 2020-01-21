@@ -25,4 +25,8 @@ else
 }
     return;
 }
+
+
+
+mysqli_close($conn);
 ?>
