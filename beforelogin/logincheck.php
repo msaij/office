@@ -2,13 +2,15 @@
   //code to verify login credentials
   require 'db_config.php';
 
-  $em=mysqli_real_escape_string($conn,$_REQUEST['email']);
-  $pa=mysqli_real_escape_string($conn,$_REQUEST['pwd']);
+  $em=mysqli_real_escape_string($conn,$_POST['email']);
+  $pa=mysqli_real_escape_string($conn,$_POST['pwd']);
 
   $sql="select email,pass from signup where email='$em' and pass='$pa'";
 
   if(mysqli_num_rows(mysqli_query($conn,$sql))==1)
   {
+    session_start();
+    $_SESSION['email']=$_POST['email'];
     header("location: ../afterlogin/home.php");
   }
   else
