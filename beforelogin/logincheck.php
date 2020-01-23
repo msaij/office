@@ -12,6 +12,7 @@
     session_start();
     $_SESSION['email']=$_POST['email'];
     header("location: ../afterlogin/home.php");
+
   }
   else
   {
