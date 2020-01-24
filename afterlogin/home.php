@@ -1,7 +1,7 @@
 <?php
 session_start();
 include('basicpage.php');
-print_r($_SESSION['email']);
+print_r('welcome'.' '.$_SESSION['un']);
 exit;
 
 ?>

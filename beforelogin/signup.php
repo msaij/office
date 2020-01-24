@@ -23,6 +23,8 @@
         <input type="text" name="firstname" required></div>
     <div class="ln"><label for="lastname">Last Name</label>
         <input type="text" name="lastname" required></div>
+    <div class="un"><label for="username">Username</label>
+        <input type="text" name="username" required></div>
     <div class="pn"><label for="phonenumber">Phone Number</label>
         <input type="tel" name="phonenumber" pattern="[6-9]{1}[0-9]{9}" required></div>
     <div class="mail"><label for="email">Email</label>

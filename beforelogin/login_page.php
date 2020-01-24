@@ -17,8 +17,8 @@
 
     <div class="loginform">
         <form id="login" action="logincheck.php" method="POST">
-        Email:
-        <input type="email" name="email" placeholder="blahblah@dot.com" required>
+        Username:
+        <input type="text" name="username" placeholder="username" required>
         Password:
         <input type="password" name="pwd" required><br>
         <button type="submit" name="submitlogin">Login</button>
