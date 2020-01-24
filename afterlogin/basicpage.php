@@ -16,6 +16,9 @@
             border-bottom: solid 1px black;
             margin-bottom: 10px;
         }
+        .right{
+
+        }
     </style>
 <body>
 
@@ -25,6 +28,10 @@
     </li>
     <li class="nav-item">
         <a class="nav-link" href="products.php" aria-disabled="true">Your Products</a>
+    </li>
+    <li class="right">
+        <a class="nav-link" href="" aria-disabled="true">
+          logout</a>
     </li>
 </ul>
 
