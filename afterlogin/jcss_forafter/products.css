@@ -1,6 +1,9 @@
 .search{
     margin-bottom: 20px;
 }
+.search{
+  margin:10px 0 10px 10px;
+}
 table{
   width:75%;
 }

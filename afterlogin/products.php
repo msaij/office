@@ -12,7 +12,7 @@
 
 <body>
     <?php
-    require 'basicpage.php';
+    require 'basepage.php';
     require 'products_table.php';
     ?>
 

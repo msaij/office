@@ -1,7 +1,7 @@
 <?php
 session_start();
-include('basicpage.php');
-printf('welcome'.' '.$_SESSION['un']);
+include('basepage.php');
+echo ('welcome'.' '.$_SESSION['un']);
 
 exit;
 ?>
