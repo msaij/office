@@ -1,12 +1,14 @@
 <?php
-
+session_start();
 function table()
 {
 include 'db.php';
+$cid=$_SESSION['cid'];
+$loc_id=$_SESSION['loc_id'];
 $sql = "SELECT * from items WHERE id IN (
         SELECT item_id from company_items WHERE company_indexid=(
         SELECT id from company_addr WHERE (cid,loc_id)=(
-        SELECT cid,loc_id from signup WHERE cid='lkdn' and loc_id=1)))";
+        SELECT cid,loc_id from signup WHERE cid='$cid' and loc_id=$loc_id)))";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0)
