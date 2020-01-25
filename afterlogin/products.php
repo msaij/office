@@ -8,25 +8,12 @@
 </head>
 
 <script src="jcss_forafter/itemslist_search.js"></script>
-    <style>
-        .search{
-            margin-bottom: 20px;
-        }
-        #byname{
-            width: 30%;
-            border-width:1px;
-            border-radius: 3px;
-        }
-        table th,td{
-            width: 130px;
-            text-align:left;
-        }
-    </style>
+<link rel="stylesheet" type="text/css" href="jcss_forafter/products.css"/>
 
 <body>
     <?php
-    include 'basicpage.php';
-    include 'products_table.php';
+    require 'basicpage.php';
+    require 'products_table.php';
     ?>
 
 <!-- search in table -->
@@ -49,6 +36,6 @@
            <?php $displaytable=table(); ?>
         </table>
     </div>
-
+<!--       table div ends      -->
 </body>
 </html>

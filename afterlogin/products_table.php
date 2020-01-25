@@ -1,8 +1,10 @@
 <?php
 session_start();
+
+# A function for displaying items of a user from the database -- linked to products.php
 function table()
 {
-include 'db.php';
+require 'db.php';
 $cid=$_SESSION['cid'];
 $loc_id=$_SESSION['loc_id'];
 $sql = "SELECT * from items WHERE id IN (
@@ -32,5 +34,5 @@ else
     return;
     mysqli_close($conn);
 }
-
+# -------       table() function ends here  ----------------------
 ?>
