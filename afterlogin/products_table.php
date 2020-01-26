@@ -24,15 +24,19 @@ if (mysqli_num_rows($result) > 0)
         "<td>". $row["brand"]. "</td>".
         "<td>". $row["price_per_unit"]. "</td>".
         "<td>". $row["qty_in_case"]."</td>".
+        "<td>".'<input type="checkbox" name="pick_item" value="item">'."</td>".
         "</tr>";
         }
 }
 else
 {
-    echo "No results";
+    echo "Try searching for something else..";
 }
     return;
     mysqli_close($conn);
 }
 # -------       table() function ends here  ----------------------
+
+
+
 ?>

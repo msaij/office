@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 
-<script src="jcss_forafter/itemslist_search.js"></script>
+<script src="jcss_forafter/products.js"></script>
 <link rel="stylesheet" type="text/css" href="jcss_forafter/products.css"/>
 
 <body>
@@ -32,6 +32,7 @@
                 <th>Brand</th>
                 <th>Price</th>
                 <th>Case quantity</th>
+                <th>Your pick</th>
             </tr>
            <?php $displaytable=table(); ?>
         </table>
