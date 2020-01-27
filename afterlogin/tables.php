@@ -2,7 +2,7 @@
 session_start();
 
 # A function for displaying items of a user from the database -- linked to products.php
-function table()
+function products_table()
 {
 require 'db.php';
 $cid=$_SESSION['cid'];
@@ -24,7 +24,7 @@ if (mysqli_num_rows($result) > 0)
         "<td>". $row["brand"]. "</td>".
         "<td>". $row["price_per_unit"]. "</td>".
         "<td>". $row["qty_in_case"]."</td>".
-        "<td>".'<input type="checkbox" name="pick_item" value="item">'."</td>".
+        "<td>".'<input type="checkbox" id="item_check" name="pick_item" value="item">'."</td>".
         "</tr>";
         }
 }
@@ -36,7 +36,6 @@ else
     mysqli_close($conn);
 }
 # -------       table() function ends here  ----------------------
-
 
 
 ?>

@@ -13,7 +13,7 @@
 <body>
     <?php
     require 'basepage.php';
-    require 'products_table.php';
+    require 'tables.php';
     ?>
 
 <!-- search in table -->
@@ -34,8 +34,9 @@
                 <th>Case quantity</th>
                 <th>Your pick</th>
             </tr>
-           <?php $displaytable=table(); ?>
+           <?php $displaytable=products_table(); ?>
         </table>
+        <button type="submit" form="allitems" onclick="">Check</button>
     </div>
 <!--       table div ends      -->
 </body>

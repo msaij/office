@@ -16,7 +16,7 @@
 <body>
 
     <div class="loginform">
-        <form id="login" action="logincheck.php" method="POST">
+        <form id="login" action="logincheck.php" method="POST" enctype="application/x-www-form-urlencoded">
         Username:
         <input type="text" name="username" placeholder="username" required>
         Password:
