@@ -1,11 +1,8 @@
 .search{
-    margin-bottom: 20px;
+  margin:10px 0 30px 10px;
 }
-.search{
-  margin:10px 0 10px 10px;
-}
-table{
-  width:75%;
+tbody{
+  width: 100%;
 }
 table th,td{
     text-align:left;

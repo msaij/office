@@ -33,6 +33,8 @@
                 <th>Price</th>
                 <th>Case quantity</th>
                 <th>Your pick</th>
+                <th>Case</th>
+                <th>Pieces</th>
             </tr>
            <?php $displaytable=products_table(); ?>
         </table>
@@ -40,17 +42,30 @@
     </div>
 <!--       table div ends      -->
 
+
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script>
-    $(document).ready(function(){
-        $(".delete-row").click(function(){
-            $("table tbody").find('input[name="record"]').each(function(){
-            	if($(this).is(":checked")){
-                    $(this).parents("tr").css("color","blue");
-                }
-            });
-        });
+$(document).ready(function(){
+  $(".check").click(function(){
+    $("#allitems").find('input[name="pick"]').each(function(){
+      if($(this).is(":checked")){
+        $(this).parents("tr").css("color","blue");
+        var currentrow=$(this).closest("tr");
+        var name=currentrow.find("td:eq(0)").text();
+        var cate=currentrow.find("td:eq(1)").text();
+        var bran=currentrow.find("td:eq(2)").text();
+        var pric=currentrow.find("td:eq(3)").text();
+        var case=currentrow.find("td:eq(4)").text();
+        alert(name);
+      }
+      else{
+        $(this).parents("tr").css("color","black");
+      }
     });
+  });
+});
+</script>
+
 
 </body>
 </html>
