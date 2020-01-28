@@ -9,7 +9,7 @@
 </head>
     <style>
         .nav-link{
-            color: black;   
+            color: black;
         }
         .nav{
             border-bottom: solid 1px black;
@@ -21,11 +21,11 @@
   <li class="nav-item">
     <a class="nav-link active" href="home.php">Home</a>
   </li>
-    
+
     <li class="nav-item">
     <a class="nav-link" href="itemslist.php" aria-disabled="true">Products</a>
     </li>
-        
+
   <li class="nav-item">
     <a class="nav-link" href="login_page.php">Login</a>
   </li>
@@ -35,7 +35,7 @@
   <li class="nav-item">
     <a class="nav-link" href="enquiries.php" aria-disabled="true">enquiries</a>
   </li>
-        
-</ul> 
+
+</ul>
 </body>
 </html>

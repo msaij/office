@@ -36,8 +36,21 @@
             </tr>
            <?php $displaytable=products_table(); ?>
         </table>
-        <button type="submit" form="allitems" onclick="">Check</button>
+        <button type="submit" form="allitems" class="check">CheckOut</button>
     </div>
 <!--       table div ends      -->
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $(".delete-row").click(function(){
+            $("table tbody").find('input[name="record"]').each(function(){
+            	if($(this).is(":checked")){
+                    $(this).parents("tr").css("color","blue");
+                }
+            });
+        });
+    });
+
 </body>
 </html>
