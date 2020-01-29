@@ -26,7 +26,7 @@ if (mysqli_num_rows($result) > 0)
         "<td>". $row["qty_in_case"]."</td>".
         "<td>".'<input type="number" name="creq" style="width:50%" min=0>'."</td>".
         "<td>".'<input type="number" name="preq" style="width:50%" min=0>'."</td>".
-        "<td>".'<input type="checkbox" name="pick" value="item">'."</td>".
+        #"<td>".'<input type="checkbox" name="pick" value="item">'."</td>".
         "</tr>";
         }
 }
@@ -44,12 +44,12 @@ else
 
 <!-- to get the information from the table and submit into the sql using php  -->
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
   $(".check").click(function(){
-    $("#allitems").find('input[name="pick"]').each(function(){
-      if($(this).is(":checked")){
-        $(this).parents("tr").css("color","blue");
+    $("#allitems").find('input[name="creq"]','input[name="preq"]').each(function(){
+      if($(this).val!=''){
         var currentrow=$(this).closest("tr");
         var name=currentrow.find("td:eq(0)").text();
         var cate=currentrow.find("td:eq(1)").text();
@@ -60,13 +60,17 @@ $(document).ready(function(){
         var preq=currentrow.find("input[name='preq']").val();
         // checking if the creq and preq filled with values or not.
         if(creq|preq!=0){
+          $(this).parents("tr").css("color","blue");
           alert(name+"\n"+cate+"\n"+bran+"\n"+pric+"\n"+cqty+"\n"+creq+"\n"+preq);
         }
-        else {
+        else{
+          $(this).parents("tr").css("color","black");
+        }
+        /*else {
           $(this).parents("tr").css("color","red");
           alert("Give the number for case quantity or Pieces \n It is marked in red");
         }
-        // checking is done and notified.
+        //checking is done and notified.*/
       }
       else{
         $(this).parents("tr").css("color","black");

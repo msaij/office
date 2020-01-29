@@ -33,7 +33,7 @@
                 <th>Case quantity</th>
                 <th>Case</th>
                 <th>Pieces</th>
-                <th>Your pick</th>
+                <!-- <th>Your pick</th> -->
 
             </tr>
            <?php $displaytable=products_table(); ?>
@@ -42,6 +42,8 @@
     </div>
 <!--       table div ends      -->
 
+<?php
+?>
 
 </body>
 </html>
