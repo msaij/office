@@ -13,8 +13,7 @@
 <body>
     <?php
     require 'basepage.php';
-    require 'tables.php';
-    ?>
+    require 'tables.php';?>
 
 <!-- search in table -->
     <div class="search">
@@ -32,9 +31,10 @@
                 <th>Brand</th>
                 <th>Price</th>
                 <th>Case quantity</th>
-                <th>Your pick</th>
                 <th>Case</th>
                 <th>Pieces</th>
+                <th>Your pick</th>
+
             </tr>
            <?php $displaytable=products_table(); ?>
         </table>
@@ -55,8 +55,16 @@ $(document).ready(function(){
         var cate=currentrow.find("td:eq(1)").text();
         var bran=currentrow.find("td:eq(2)").text();
         var pric=currentrow.find("td:eq(3)").text();
-        var case=currentrow.find("td:eq(4)").text();
-        alert(name);
+        var cqty=currentrow.find("td:eq(4)").text();
+        var creq=currentrow.find("input[name='creq']").val();
+        var preq=currentrow.find("input[name='preq']").val();
+        if(creq|preq!=0){
+          alert(name+"\n"+cate+"\n"+bran+"\n"+pric+"\n"+cqty+"\n"+creq+"\n"+preq);
+        }
+        else {
+          $(this).parents("tr").css("color","red");
+          alert("Give the number for case quantity or Pieces");
+        }
       }
       else{
         $(this).parents("tr").css("color","black");

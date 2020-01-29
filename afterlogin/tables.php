@@ -24,9 +24,9 @@ if (mysqli_num_rows($result) > 0)
         "<td>". $row["brand"]. "</td>".
         "<td>". $row["price_per_unit"]. "</td>".
         "<td>". $row["qty_in_case"]."</td>".
+        "<td>".'<input type="number" name="creq" style="width:50%" min=0>'."</td>".
+        "<td>".'<input type="number" name="preq" style="width:50%" min=0>'."</td>".
         "<td>".'<input type="checkbox" name="pick" value="item">'."</td>".
-        "<td>".'<input type="text" name="c_casereq" style="width:50%">'."</td>".
-        "<td>".'<input type="text" name="c_nuofpices" style="width:50%">'."</td>".
         "</tr>";
         }
 }
