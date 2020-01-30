@@ -32,13 +32,12 @@ if (mysqli_num_rows($result) > 0)
 }
 else
 {
-    echo "Try searching for something else..";
+    echo "Sorry for the inconvenience.!!";
 }
     return;
     mysqli_close($conn);
 }
 # -------       table() function ends here  ----------------------
-
 ?>
 
 
@@ -67,9 +66,8 @@ $(document).ready(function(){
           document.cookie="cqty="+cqty;
           document.cookie="creq="+creq;
           document.cookie="preq="+preq;
-          alert(name+"\n"+cate+"\n"+bran+"\n"+pric+"\n"+cqty+"\n"+creq+"\n"+preq);
-
           /*window.location="/afterlogin/home.php";*/
+          location.reload();
         }
         else{
           $(this).parents("tr").css("color","black");
@@ -82,5 +80,31 @@ $(document).ready(function(){
 <!-- table check and the php(sql) ends here  -->
 
 <?php
-print($_COOKIE['name']);
+
+if($_COOKIE!=""){
+  function cooker(){
+    $a=$_COOKIE['name'];
+    $b=$_COOKIE['cate'];
+    $c=$_COOKIE['bran'];
+    $d=$_COOKIE['pric'];
+    $e=$_COOKIE['cqty'];
+    $f=$_COOKIE['creq'];
+    $g=$_COOKIE['preq'];
+    $un=$_SESSION['un'];
+    require 'db.php';
+    $cookit ="INSERT into carts(username,name,category,brand,price_per_unit,qty_in_case,case_req,pieces_req)
+                values('$un','$a','$b','$c','$d','$e','$f','$g');";
+    if ($conn->query($cookit) === TRUE) {
+      echo "ThankYou for placing your order, Your products are highlighted(blue).";
+    }
+    else {
+      echo "Error: " . $cookit . "<br>" . $conn->error;
+    }
+  }
+}
+else{
+  echo "scam";
+}
+cooker();
+
 ?>
