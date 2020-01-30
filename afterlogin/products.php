@@ -42,8 +42,5 @@
     </div>
 <!--       table div ends      -->
 
-<?php
-?>
-
 </body>
 </html>

@@ -43,9 +43,8 @@ else
 
 
 <!-- to get the information from the table and submit into the sql using php  -->
-<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
 $(document).ready(function(){
   $(".check").click(function(){
     $("#allitems").find('input[name="creq"]','input[name="preq"]').each(function(){
@@ -61,22 +60,27 @@ $(document).ready(function(){
         // checking if the creq and preq filled with values or not.
         if(creq|preq!=0){
           $(this).parents("tr").css("color","blue");
+          document.cookie="name="+name;
+          document.cookie="cate="+cate;
+          document.cookie="bran="+bran;
+          document.cookie="pric="+pric;
+          document.cookie="cqty="+cqty;
+          document.cookie="creq="+creq;
+          document.cookie="preq="+preq;
           alert(name+"\n"+cate+"\n"+bran+"\n"+pric+"\n"+cqty+"\n"+creq+"\n"+preq);
+
+          /*window.location="/afterlogin/home.php";*/
         }
         else{
           $(this).parents("tr").css("color","black");
         }
-        /*else {
-          $(this).parents("tr").css("color","red");
-          alert("Give the number for case quantity or Pieces \n It is marked in red");
-        }
-        //checking is done and notified.*/
-      }
-      else{
-        $(this).parents("tr").css("color","black");
       }
     });
   });
 });
 </script>
 <!-- table check and the php(sql) ends here  -->
+
+<?php
+print($_COOKIE['name']);
+?>
