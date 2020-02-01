@@ -74,4 +74,3 @@ $(document).ready(function(){
   });
 });
 </script>
-<!-- table check and the php(ajax) ends here  -->
