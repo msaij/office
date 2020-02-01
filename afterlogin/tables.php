@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 # A function for displaying items of a user from the database -- linked to products.php
 function products_table()
 {
@@ -19,13 +18,13 @@ if (mysqli_num_rows($result) > 0)
     while($row = mysqli_fetch_assoc($result))
         {
         echo "<tr>".
-        "<td>". $row["name"]."</td>".
-        "<td>". $row["category"]. "</td>".
-        "<td>". $row["brand"]. "</td>".
-        "<td>". $row["price_per_unit"]. "</td>".
-        "<td>". $row["qty_in_case"]."</td>".
-        "<td>".'<input type="number" name="creq" style="width:50%" min=0>'."</td>".
-        "<td>".'<input type="number" name="preq" style="width:50%" min=0>'."</td>".
+        "<td class='name'>". $row["name"]."</td>".
+        "<td class='cate'>". $row["category"]. "</td>".
+        "<td class='bran'>". $row["brand"]. "</td>".
+        "<td class='pric'>". $row["price_per_unit"]. "</td>".
+        "<td class='cqty'>". $row["qty_in_case"]."</td>".
+        "<td contenteditable='true' class='creq'>"."</td>".
+        "<td contenteditable='true' class='preq'>"."</td>".
         #"<td>".'<input type="checkbox" name="pick" value="item">'."</td>".
         "</tr>";
         }
@@ -40,13 +39,12 @@ else
 # -------       table() function ends here  ----------------------
 ?>
 
-
 <!-- to get the information from the table and submit into the sql using php  -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
-  $(".check").click(function(){
-    $("#allitems").find('input[name="creq"]','input[name="preq"]').each(function(){
+  $("#check").click(function(){
+    $("#allitems").find('.creq','.preq').each(function(){
       if($(this).val!=''){
         var currentrow=$(this).closest("tr");
         var name=currentrow.find("td:eq(0)").text();
@@ -54,20 +52,20 @@ $(document).ready(function(){
         var bran=currentrow.find("td:eq(2)").text();
         var pric=currentrow.find("td:eq(3)").text();
         var cqty=currentrow.find("td:eq(4)").text();
-        var creq=currentrow.find("input[name='creq']").val();
-        var preq=currentrow.find("input[name='preq']").val();
+        var creq=currentrow.find("td:eq(5)").text();
+        var preq=currentrow.find("td:eq(6)").text();
         // checking if the creq and preq filled with values or not.
         if(creq|preq!=0){
           $(this).parents("tr").css("color","blue");
-          document.cookie="name="+name;
-          document.cookie="cate="+cate;
-          document.cookie="bran="+bran;
-          document.cookie="pric="+pric;
-          document.cookie="cqty="+cqty;
-          document.cookie="creq="+creq;
-          document.cookie="preq="+preq;
-          /*window.location="/afterlogin/home.php";*/
-          location.reload();
+          $.ajax({
+            url:"order.php",
+            method:"POST",
+            data:{name:'name', cate:cate, bran:bran, pric:pric, cqty:cqty, creq:creq, preq:preq},
+            success:function(data)
+            {
+                console.log(data);
+            }
+          });
         }
         else{
           $(this).parents("tr").css("color","black");
@@ -80,31 +78,44 @@ $(document).ready(function(){
 <!-- table check and the php(sql) ends here  -->
 
 <?php
-
-if($_COOKIE!=""){
-  function cooker(){
-    $a=$_COOKIE['name'];
-    $b=$_COOKIE['cate'];
-    $c=$_COOKIE['bran'];
-    $d=$_COOKIE['pric'];
-    $e=$_COOKIE['cqty'];
-    $f=$_COOKIE['creq'];
-    $g=$_COOKIE['preq'];
-    $un=$_SESSION['un'];
-    require 'db.php';
-    $cookit ="INSERT into carts(username,name,category,brand,price_per_unit,qty_in_case,case_req,pieces_req)
-                values('$un','$a','$b','$c','$d','$e','$f','$g');";
-    if ($conn->query($cookit) === TRUE) {
-      echo "ThankYou for placing your order, Your products are highlighted(blue).";
-    }
-    else {
-      echo "Error: " . $cookit . "<br>" . $conn->error;
-    }
-  }
-}
-else{
-  echo "scam";
-}
-cooker();
-
+#require 'db.php';
+#  if(isset($_POST["name"])){
+#    $un=$_SESSION["un"];
+#    $name=$_POST["name"];
+#    $cate=$_POST["cate"];
+#    $bran=$_POST["bran"];
+#    $pric=$_POST["pric"];
+#    $cqty=$_POST["cqty"];
+#    $creq=$_POST["creq"];
+#    $preq=$_POST["preq"];
+#    $q='';
+#    for($count=0;$count<count($name);$count++){
+#      $un_clean=mysqli_real_escape_string($conn,$un[$count]);
+#      $name_clean=mysqli_real_escape_string($conn,$name[$count]);
+#      $cate_clean=mysqli_real_escape_string($conn,$cate[$count]);
+#      $bran_clean=mysqli_real_escape_string($conn,$bran[$count]);
+#      $pric_clean=mysqli_real_escape_string($conn,$pric[$count]);
+#      $cqty_clean=mysqli_real_escape_string($conn,$cqty[$count]);
+#      $creq_clean=mysqli_real_escape_string($conn,$creq[$count]);
+#      $preq_clean=mysqli_real_escape_string($conn,$preq[$count]);
+#
+#      if($creq !='' | $preq!=''){
+#        $q="INSERT into carts(username,name,category,brand,price_per_unit,qty_in_case,case_req,pieces_req)
+#            values('$un_clean','$name_clean','$cate_clean','$bran_clean',$pric_clean,$cqty_clean,$creq_clean,$preq_clean)";
+#      }
+#    }
+#    if($q!=''){
+#      if(mysqli_multi_query($conn,$q)){
+#        echo "Thank you";
+#      }
+#      else{
+#        echo "Because of some error, you might have to try again..";
+#      }
+#    }
+#    else {
+#      echo "Fill the required fields.";
+#    }
+#
+#  }
+#mysqli_close($conn);
 ?>

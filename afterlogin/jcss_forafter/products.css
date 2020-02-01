@@ -2,5 +2,10 @@
   margin:10px 0 20px 10px;
 }
 table th,td{
-    text-align:left;
+    text-align:center;
+}
+td.creq, td.preq{
+  border-width:thin;
+  border-color: black;
+  border-style: solid;
 }

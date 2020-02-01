@@ -38,7 +38,7 @@
             </tr>
            <?php $displaytable=products_table(); ?>
         </table>
-        <button type="submit" form="allitems" class="check">CheckOut</button>
+        <button type="submit" id="check">CheckOut</button>
     </div>
 <!--       table div ends      -->
 
