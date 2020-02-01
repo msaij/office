@@ -23,9 +23,8 @@ if (mysqli_num_rows($result) > 0)
         "<td class='bran'>". $row["brand"]. "</td>".
         "<td class='pric'>". $row["price_per_unit"]. "</td>".
         "<td class='cqty'>". $row["qty_in_case"]."</td>".
-        "<td class='creq'><input type='number' name='creq'></td>".
-        "<td class='preq'><input type='number' name='preq'></td>".
-        #"<td>".'<input type="checkbox" name="pick" value="item">'."</td>".
+        "<td class='creq'><input type='number' name='creq' min='0'></td>".
+        "<td class='preq'><input type='number' name='preq' min='0'></td>".
         "</tr>";
         }
 }
