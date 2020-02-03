@@ -27,8 +27,6 @@
   <table id="dd">
     <th>Delivery date:</th>
     <td><input type="date" name="deliveryd"></td>
-    <th>Delivery time:</th>
-    <td><input type="time" name="deliveryt"></td>
   </table>
 </div>
 
