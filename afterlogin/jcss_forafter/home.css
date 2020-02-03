@@ -1,0 +1,10 @@
+.formforsorting{
+  margin: 15px;
+}
+
+#sorting > tbody > tr > td{
+  border-style: solid;
+  border-width: thin;
+  border-color: black;
+  padding: 0px 10px;
+}

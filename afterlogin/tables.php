@@ -52,13 +52,15 @@ $(document).ready(function(){
         cqty=currentrow.find("td:eq(4)").text();
         creq=currentrow.find("input[name=creq]").val();
         preq=currentrow.find("input[name=preq]").val();
+        date=$("#dd").find('input[name=deliveryd]').val();
+
         // checking if the creq and preq filled with values or not & sending that td to the db
-        if(creq|preq!=0){
+        if(creq|preq!=0 && date!=0){
           $(this).parents("tr").css("color","orange");
           $.ajax({
             url:"order.php",
             method:"POST",
-            data:{name:name, cate:cate, bran:bran, pric:pric, cqty:cqty, creq:creq, preq:preq},
+            data:{name:name, cate:cate, bran:bran, pric:pric, cqty:cqty, creq:creq, preq:preq,date:date},
             success:function(data)
             {
                 location.href="/afterlogin/home.php";
