@@ -1,6 +1,7 @@
 <?php
 session_start();
-# A function for displaying items of a user from the database -- linked to products.php
+# A function for displaying items of a user from the database -- linked to home.php
+
 function orders()
 {
 require 'db.php';
@@ -31,5 +32,5 @@ else
 }
     mysqli_close($conn);
 }
-# -------       table() function ends here  ----------------------
+# -------   table() function ends here
 ?>

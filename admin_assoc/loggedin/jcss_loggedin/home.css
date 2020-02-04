@@ -1,8 +1,20 @@
+#orderslist{
+  margin: 5px;
+}
 #orderslist tr{
   border-style:solid;
   border-width: thin;
   border-color: black;
 }
-#orderslist{
+#orderslist th,td{
+  padding: 0px 10px;
+}
+.parameters{
   margin: 5px;
+}
+.parameters td{
+  border-width: thin;
+  border-color: black;
+  border-style: solid;
+  padding: 0px 10px;
 }

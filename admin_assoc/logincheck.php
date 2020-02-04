@@ -18,8 +18,6 @@ session_start();
   {
     header("location: login.php");
   }
-
-
 mysqli_close($conn);
 exit;
 ?>

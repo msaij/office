@@ -22,7 +22,7 @@
         </form>
     </div>
 
-<!-- the table -->
+<!-- table for date -->
 <div class="deliverydate">
   <table id="dd">
     <th>Delivery date:</th>

@@ -2,19 +2,31 @@
 include 'loggedbasepage.php';
 require_once 'homeparts/listoforders.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title>Home</title>
     <link rel="stylesheet" href="jcss_loggedin/home.css"/>
+    <script src="jcss_loggedin/ordersort.js" charset="utf-8"></script>
   </head>
   <body>
+
+<!-- sorting -->
     <div class="sorting">
-      
+      <h5 style="margin:5px">Sorting parameters-</h5>
+      <div class="parameters">
+        <form id="parameters">
+            <input type="text" name="byname" id="p1" placeholder="Product name.." onkeyup="sortbyname()"/>
+            <input type="month" name="bydate" id="p2" onkeyup="sortbydate()"/>
+        </form>
+      </div>
     </div>
+
+<!-- orders -->
     <div class="listoforders">
-      <h5>Your orders</h5>
+      <h6 style="margin:5px">Orders :</h6>
         <table id="orderslist">
             <tr>
                 <th>Name</th>
@@ -26,8 +38,9 @@ require_once 'homeparts/listoforders.php';
                 <th>Pieces-required</th>
                 <th>Delivery date</th>
             </tr>
-           <?php  $yu=orders()?>
+           <?php  $yu=orders();?>
         </table>
     </div>
+
   </body>
 </html>

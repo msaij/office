@@ -18,6 +18,7 @@
       font-size: 15px;
   }
   </style>
+  
 <body>
   <div class="loginform">
       <form id="login" action="logincheck.php" method="POST" enctype="application/x-www-form-urlencoded">
