@@ -6,7 +6,7 @@ function orders()
 {
 require 'db.php';
 $un=$_SESSION["un"];
-$sql = "SELECT * FROM cart";
+$sql = "SELECT username,name,category,brand,price_per_unit,qty_in_case,creq,preq,deliverydate FROM cart";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0)
@@ -15,6 +15,7 @@ if (mysqli_num_rows($result) > 0)
     while($row = mysqli_fetch_assoc($result))
         {
         echo "<tr>".
+        "<td class='name'>". $row["username"]."</td>".
         "<td class='name'>". $row["name"]."</td>".
         "<td class='cate'>". $row["category"]. "</td>".
         "<td class='bran'>". $row["brand"]. "</td>".

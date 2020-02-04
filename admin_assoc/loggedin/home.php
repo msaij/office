@@ -29,6 +29,7 @@ require_once 'homeparts/listoforders.php';
       <h6 style="margin:5px">Orders :</h6>
         <table id="orderslist">
             <tr>
+                <th>Username</th>
                 <th>Name</th>
                 <th>Category</th>
                 <th>Brand</th>
