@@ -6,38 +6,37 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-    
+
 <script src="jcss_forbefore/itemslist_search.js"></script>
     <style>
         .search{
             margin-bottom: 20px;
         }
-        #byname{
-            width: 30%;
+        #byname,#bycategory{
+            width: 20%;
             border-width:1px;
-            border-radius: 3px;    
+            border-radius: 3px;
         }
         table th,td{
             width: 130px;
             text-align:left;
         }
-        
-    
+
+
     </style>
-    
+
 <body>
     <?php  include 'base_beforelogin.php';  include 'itemslist_table.php'; ?>
-    
+
 <!-- search in table -->
     <div class="search">
         <form id="searchform">
-            
-            <input type="text" name="byname" id="byname" placeholder="Product category.." onkeyup="searchbyname()"/>
-            
+            <input type="text" name="byname" id="byname" placeholder="Product name.." onkeyup="searchbyname()"/>
+            <input type="text" name="bycategory" id="bycategory" placeholder="Category.." onkeyup="searchbycategory()"/>
         </form>
     </div>
-    
-    
+
+
 <!-- the table -->
     <div class="table">
         <table id="allitems">
@@ -48,9 +47,9 @@
                 <th>Price</th>
                 <th>Case quantity</th>
             </tr>
-           <?php $displaytable=table(); ?> 
+           <?php $displaytable=table(); ?>
         </table>
-    </div>   
+    </div>
 
 
 </body>
