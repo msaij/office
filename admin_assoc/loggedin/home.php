@@ -19,7 +19,7 @@ require_once 'homeparts/listoforders.php';
       <div class="parameters">
         <form id="parameters">
             <input type="text" name="byname" id="p1" placeholder="Product name.." onkeyup="sortbyname()"/>
-            <input type="month" name="bydate" id="p2" onkeyup="sortbydate()"/>
+            <input type="month" name="bymonth" id="p2" onkeyup="sortbymonth()" value="2020-01"/>
         </form>
       </div>
     </div>

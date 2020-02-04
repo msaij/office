@@ -25,7 +25,7 @@ function sortbyname() {
   }
 }
 
-function sortbydate() {
+function sortbymonth() {
   // search using month and year
   var input, filter, table, tr, td, i, txtValue;
   input = document.getElementById("p2");
