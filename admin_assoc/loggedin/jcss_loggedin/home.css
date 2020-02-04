@@ -1,0 +1,8 @@
+#orderslist tr{
+  border-style:solid;
+  border-width: thin;
+  border-color: black;
+}
+#orderslist{
+  margin: 5px;
+}
