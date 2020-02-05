@@ -30,11 +30,13 @@ require 'homeparts/reports.php';
           <?php ulmonthname();?>
         </ul>
       </div>
+
     </div>
 
     <!--right side-->
     <div class="whole-right">
       <div class="itemsul-display">
+
         <!--Every month items and total number of products ordered -->
         <div id="everymonthsitems-display">
           <table class="adding-creq">
