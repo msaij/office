@@ -7,9 +7,7 @@ function ulmonthname(){
   if(mysqli_num_rows($re)>0){
     while ($row=mysqli_fetch_assoc($re)) {
       $mn=$row["monthname"];
-      echo "<ul style='list-style-type:none;' class='monthslist'>".
-        "<li>"."<a href='' class='$mn'>".$mn."</a>"."</li>".
-        "</ul>";
+      echo "<li>"."<a href='#' class='$mn,mn'>".$mn."</a>"."</li>";
     }
   }
   else {
@@ -51,8 +49,14 @@ else
 #each month items and quantity
 function eachmonthitems()
 {
+  if(isset($nom)){
+    echo $nom;
+  }
+  else {
+    $nom='april';
+  }
 require 'db.php';
-$eachmonth = "SELECT name,category,brand,creq,preq FROM cart where monthname(deliverydate)='april';";
+$eachmonth = "SELECT name,category,brand,creq,preq FROM cart where monthname(deliverydate)='$nom';";
 $result = mysqli_query($conn, $eachmonth);
 if (mysqli_num_rows($result) > 0)
 {

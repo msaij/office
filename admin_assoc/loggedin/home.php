@@ -1,6 +1,6 @@
 <?php
 require_once 'loggedbasepage.php';
-require 'homeparts/reports.php';
+require_once 'homeparts/reports.php';
 ?>
 
 <!DOCTYPE html>
@@ -17,29 +17,33 @@ require 'homeparts/reports.php';
       }
     </style>
     <link rel="stylesheet" href="homeparts/jcss_logged/home.css">
-    <script src="homeparts/jcss_logged/ordersort.js" charset="utf-8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="homeparts/jcss_logged/home.js" charset="utf-8"></script>
   </head>
+
   <body>
 
-    <!--left side-->
+<!--left side -------------------------------->
     <div class="whole-left">
       <!--list of items and list within a month using list -->
       <div class="itemsul-links">
         <ul style="list-style-type:none;" id="itemsul">
-          <li><a href="#">All items</a></li>
+          <li><a href="#" class="orderslist">All orders</a></li>
+          <ul style='list-style-type:none;' class='monthslist'>
           <?php ulmonthname();?>
+          </ul>
         </ul>
       </div>
 
     </div>
 
-    <!--right side-->
+<!--right side ------------------------------->
     <div class="whole-right">
       <div class="itemsul-display">
 
         <!--Every month items and total number of products ordered -->
         <div id="everymonthsitems-display">
-          <table class="adding-creq">
+          <table>
             <tr>
             <th>Name</th>
             <th>Category</th>
@@ -52,7 +56,7 @@ require 'homeparts/reports.php';
         </div>
 
         <div id="eachmonthitems-display">
-          <table class="addingcreq">
+          <table>
             <tr>
             <th>Name</th>
             <th>Category</th>
