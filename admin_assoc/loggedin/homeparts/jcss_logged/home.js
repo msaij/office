@@ -1,36 +1,36 @@
-// HIDE AND DISPLAY PART STARTS-------------
+// HIDE AND DISPLAY PART STARTS for(orders)-----------------------------
 $(document).ready(function(){
-  $(".monthslist").hide();
+  $(".monthslist").hide(); // hiding months (name) links
 
   $(".orderslist").click(function(){
-    $(".monthslist").show();
+    $(".monthslist").show(); //showing months (name) links
   });
   $(".orderslist").dblclick(function(){
-    $(".monthslist").hide();
+    $(".monthslist").hide(); //hide months name links
+    $("#every-monthsorders-display").hide(); //hiding every months consolidated order table
   });
 });
 // hide or show the tables of each link
 // i.e showing the table of the link which is clicked
 $(document).ready(function(){
-  $("#everymonthsitems-display").hide();
-  $("#eachmonthitems-display").hide();
+  $("#every-monthsorders-display").hide(); //hiding every months consolidated order table
+  $("#each-monthitems-display").hide(); //hiding each month order table
 
   $(".orderslist").click(function(){
-    $("#everymonthsitems-display").show();
-    $("#eachmonthitems-display").hide();
+    $("#every-monthsorders-display").show(); //show every months order table
+    $("#each-monthitems-display").hide(); //hide each month ordertable
   });
   $(".monthslist").click(function(){
-    $("#eachmonthitems-display").show();
-    $("#everymonthsitems-display").hide();
+    $("#each-monthitems-display").show(); //show eachmonth ordertable
+    $("#every-monthsorders-display").hide(); //hide everymonth ordertable
   });
 });
-// HIDE AND DISPLAY PART ENDS HERE-------------
-
-
+// HIDE AND DISPLAY PART ENDS HERE for(orders)----------------------------
 
 
 // $(document).ready(function(){ }) is equal to $(funciton(){ })
-// ---- from here ->down
+
+// from here ->down -> to identify which month link is clicked under order and send it to db to get table
 /*$(function(){
   $(".monthslist li a").click(function(){
     nameomonth=$(".monthslist li a:link:focus").text();
@@ -46,5 +46,4 @@ $(document).ready(function(){
     });
   });
 });
-*/
-// -- till here
+*/  // -- till here

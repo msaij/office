@@ -9,7 +9,7 @@ require_once 'homeparts/reports.php';
     <meta charset="utf-8">
     <title>Home</title>
     <style>
-      ul#itemsul{
+      ul#orders-ul{
         padding-left: 15px;
       }
       ul.monthslist{
@@ -26,23 +26,24 @@ require_once 'homeparts/reports.php';
 <!--left side -------------------------------->
     <div class="whole-left">
       <!--list of items and list within a month using list -->
-      <div class="itemsul-links">
-        <ul style="list-style-type:none;" id="itemsul">
-          <li><a href="#" class="orderslist">All orders</a></li>
+      <div class="orders-ul-links">
+        <ul style="list-style-type:none;" id="orders-ul">
+          <li><a href="#" class="orderslist">Orders</a></li>
           <ul style='list-style-type:none;' class='monthslist'>
           <?php ulmonthname();?>
           </ul>
         </ul>
       </div>
 
+      </div>
     </div>
 
 <!--right side ------------------------------->
     <div class="whole-right">
-      <div class="itemsul-display">
+      <div class="orders-ul-display">
 
         <!--Every month items and total number of products ordered -->
-        <div id="everymonthsitems-display">
+        <div id="every-monthsorders-display">
           <table>
             <tr>
             <th>Name</th>
@@ -55,7 +56,7 @@ require_once 'homeparts/reports.php';
           </table>
         </div>
 
-        <div id="eachmonthitems-display">
+        <div id="each-monthitems-display">
           <table>
             <tr>
             <th>Name</th>
