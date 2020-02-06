@@ -1,7 +1,11 @@
 <?php
+
+
+/* ---IT IS FOR 'ORDER' HEADER LINK--- */
+
 #getting the months in which it consists orders
 function ulmonthname(){
-  require_once 'db.php';
+  require 'db.php';
   $monthunorderlist="SELECT DISTINCT monthname(deliverydate) as monthname FROM cart;";
   $re=mysqli_query($conn,$monthunorderlist);
   if(mysqli_num_rows($re)>0){
@@ -18,7 +22,7 @@ function ulmonthname(){
 }
 
 
-#every month items to get total number of items
+#every months orders.
 function everymonthsitems()
 {
 require 'db.php';
@@ -46,7 +50,7 @@ else
     mysqli_close($conn);
 }
 
-#each month items and quantity
+#each months items orders.
 function eachmonthitems()
 {
   if(isset($nom)){
@@ -80,14 +84,31 @@ else
     mysqli_close($conn);
 }
 
+/* ---TILL HERE IT IS FOR 'ORDER' HEADER LINK---- */
+
+
+/* ---FOR 'ORDER' HEADER LINK---- */
+
+function ulyearnumbers(){
+  require 'db.php';
+  $yearsunorderlist="SELECT DISTINCT year(deliverydate) as yearnumber FROM cart;";
+  $re=mysqli_query($conn,$yearsunorderlist);
+  if(mysqli_num_rows($re)>0){
+    while ($row=mysqli_fetch_assoc($re)) {
+      $yn=$row["yearnumber"];
+      echo "<li>"."<a href='#' class='yn'>".$yn."</a>"."</li>";
+    }
+  }
+  else {
+    echo "None yet";
+  }
+  return;
+  mysqli_close($conn);
+}
 
 
 
 
 
-
-
-
-
-
+/* ---TILL HERE IT IS FOR 'YEAR' HEADER LINK---- */
 ?>
