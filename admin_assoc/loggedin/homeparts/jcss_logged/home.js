@@ -1,3 +1,4 @@
+// HIDE AND DISPLAY PART STARTS
 $(document).ready(function(){
   $(".monthslist").hide();
 
@@ -24,7 +25,7 @@ $(document).ready(function(){
     $("#everymonthsitems-display").hide();
   });
 });
-
+// HIDE AND DISPLAY PART ENDS HERE
 
 
 
