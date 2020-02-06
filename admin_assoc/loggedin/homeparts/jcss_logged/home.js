@@ -1,4 +1,4 @@
-// HIDE AND DISPLAY PART STARTS
+// HIDE AND DISPLAY PART STARTS-------------
 $(document).ready(function(){
   $(".monthslist").hide();
 
@@ -9,7 +9,6 @@ $(document).ready(function(){
     $(".monthslist").hide();
   });
 });
-
 // hide or show the tables of each link
 // i.e showing the table of the link which is clicked
 $(document).ready(function(){
@@ -25,7 +24,7 @@ $(document).ready(function(){
     $("#everymonthsitems-display").hide();
   });
 });
-// HIDE AND DISPLAY PART ENDS HERE
+// HIDE AND DISPLAY PART ENDS HERE-------------
 
 
 
