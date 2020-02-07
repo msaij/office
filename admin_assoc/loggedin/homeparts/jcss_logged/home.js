@@ -59,19 +59,18 @@ $(document).ready(function(){
 // $(document).ready(function(){ }) is equal to $(funciton(){ })
 
 // from here ->down -> to identify which month link is clicked under order and send it to db to get table
-/*$(function(){
+$(function(){
   $(".monthslist li a").click(function(){
-    nameomonth=$(".monthslist li a:link:focus").text();
+    nameomonth=$(".mn:focus").text();
     $.ajax({
       url:"../loggedin/homeparts/reports.php",
       method:"POST",
-      data:{nameomonth:nameomonth},
-      success:function(data)
+      data:{nom:nameomonth},
+      success:function(nom)
       {
-        alert(data);
-        console.log(data);
+        alert(nom);
+        console.log(nom);
       }
     });
   });
 });
-*/  // -- till here

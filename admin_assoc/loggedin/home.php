@@ -17,8 +17,8 @@ require_once 'homeparts/reports.php';
 
 <!--left side -------------------------------->
     <div class="whole-left">
-      <!-- Orders list -->
       <div class="orders-ul-links">
+      <!-- Orders list -->
         <ul style="list-style-type:none;" id="orders-ul">
           <li><a href="#" class="orderslist">Orders</a></li>
             <ul style='list-style-type:none;' class='monthslist'>
@@ -69,7 +69,7 @@ require_once 'homeparts/reports.php';
             <th>CReq</th>
             <th>PReq</th>
             </tr>
-            <?php eachmonthitems(); exit;?>
+            <?php eachmonthitems();?>
           </table>
         </div>
 
@@ -79,7 +79,7 @@ require_once 'homeparts/reports.php';
       <!-- Years -->
       <div class="years-ul-display">
 
-        
+
 
 
 

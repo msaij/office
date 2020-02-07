@@ -1,4 +1,3 @@
-<!-- base page of afterlogin -->
 <!DOCTYPE html>
 <html lang="en">
 <head>

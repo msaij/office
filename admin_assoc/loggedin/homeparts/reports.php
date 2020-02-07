@@ -1,6 +1,5 @@
 <?php
 
-
 /* ---IT IS FOR 'ORDER' HEADER LINK--- */
 
 #getting the months in which it consists orders
@@ -11,7 +10,7 @@ function ulmonthname(){
   if(mysqli_num_rows($re)>0){
     while ($row=mysqli_fetch_assoc($re)) {
       $mn=$row["monthname"];
-      echo "<li>"."<a href='#' class='$mn,mn'>".$mn."</a>"."</li>";
+      echo "<li>"."<a href='#' class='mn'>".$mn."</a>"."</li>";
     }
   }
   else {
@@ -51,37 +50,39 @@ else
 }
 
 #each months items orders.
+
+if(isset($_POST['nom'])) {
+  $nom=$_POST['nom'];
+}
+
 function eachmonthitems()
 {
-  if(isset($nom)){
-    echo $nom;
+  global $nom;
+  echo "$nom";
+  $GLOBALS['nom'];
+  require 'db.php';
+  $eachmonth = "SELECT name,category,brand,creq,preq FROM cart where monthname(deliverydate)='april';";
+  $result = mysqli_query($conn, $eachmonth);
+  if (mysqli_num_rows($result) > 0)
+  {
+      // output data of each row
+      while($row = mysqli_fetch_assoc($result))
+      {
+        echo "<tr>".
+        "<td>". $row["name"]."</td>".
+        "<td>". $row["category"]. "</td>".
+        "<td>". $row["brand"]. "</td>".
+        "<td>". $row["creq"]. "</td>".
+        "<td>". $row["preq"]."</td>".
+        "</tr>";
+      }
   }
-  else {
-    $nom='april';
-  }
-require 'db.php';
-$eachmonth = "SELECT name,category,brand,creq,preq FROM cart where monthname(deliverydate)='$nom';";
-$result = mysqli_query($conn, $eachmonth);
-if (mysqli_num_rows($result) > 0)
-{
-    // output data of each row
-    while($row = mysqli_fetch_assoc($result))
-    {
-      echo "<tr>".
-      "<td>". $row["name"]."</td>".
-      "<td>". $row["category"]. "</td>".
-      "<td>". $row["brand"]. "</td>".
-      "<td>". $row["creq"]. "</td>".
-      "<td>". $row["preq"]."</td>".
-      "</tr>";
-    }
-}
-else
-{
+  else
+  {
     echo "0 results";
-}
-    return;
-    mysqli_close($conn);
+  }
+  return;
+  mysqli_close($conn);
 }
 
 /* ---TILL HERE IT IS FOR 'ORDER' HEADER LINK---- */
