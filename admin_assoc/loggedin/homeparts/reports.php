@@ -80,7 +80,7 @@ eachmonthitems();
 /* ---TILL HERE IT IS FOR 'ORDER' HEADER LINK---- */
 
 
-/* ---FOR 'ORDER' HEADER LINK---- */
+/* ---FOR 'YEARS' HEADER LINK---- */
 
 function ulyearnumbers(){
   require 'db.php';

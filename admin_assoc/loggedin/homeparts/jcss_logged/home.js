@@ -56,9 +56,10 @@ $(document).ready(function(){
 
 
 
-// $(document).ready(function(){ }) is equal to $(funciton(){ })
 
-// from here ->down -> to identify which month link is clicked under order and send it to db to get table
+
+/* from here ->down -> to identify which month link is clicked under order and send it to db to get table */
+// $(document).ready(function(){ }) is equal to $(funciton(){ })
 $(function(){
   $(".monthslist li a").click(function(){
     nameomonth=$(".mn:focus").text();
@@ -73,3 +74,4 @@ $(function(){
     });
   });
 });
+/* Till here------- */

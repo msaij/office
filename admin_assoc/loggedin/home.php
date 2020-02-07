@@ -61,7 +61,7 @@ require_once 'homeparts/reports.php';
         </div>
 
         <div id="each-monthitems-display">
-          <table>
+          <table> <!-- display tables for each month in 'ORDER' -->
             <tbody>
               <tr>
               <th>Name</th>
