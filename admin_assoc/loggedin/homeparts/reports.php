@@ -51,30 +51,21 @@ else
 
 #each months items orders.
 
-if(isset($_POST['nom'])) {
-  $nom=$_POST['nom'];
-}
-
 function eachmonthitems()
 {
-  global $nom;
-  echo "$nom";
-  $GLOBALS['nom'];
   require 'db.php';
-  $eachmonth = "SELECT name,category,brand,creq,preq FROM cart where monthname(deliverydate)='april';";
+  if(isset($_POST['nom'])){
+    $nom=$_POST['nom'];
+    $eachmonth = "SELECT name,category,brand,creq,preq FROM cart where monthname(deliverydate)='$nom';";
+
   $result = mysqli_query($conn, $eachmonth);
   if (mysqli_num_rows($result) > 0)
   {
       // output data of each row
       while($row = mysqli_fetch_assoc($result))
       {
-        echo "<tr>".
-        "<td>". $row["name"]."</td>".
-        "<td>". $row["category"]. "</td>".
-        "<td>". $row["brand"]. "</td>".
-        "<td>". $row["creq"]. "</td>".
-        "<td>". $row["preq"]."</td>".
-        "</tr>";
+        echo  "<td>". $row["name"]."</td><td>". $row["category"].
+              "</td><td>". $row["brand"]. "</td><td>". $row["creq"]. "</td><td>". $row["preq"]."</td>";
       }
   }
   else
@@ -84,7 +75,8 @@ function eachmonthitems()
   return;
   mysqli_close($conn);
 }
-
+}
+eachmonthitems();
 /* ---TILL HERE IT IS FOR 'ORDER' HEADER LINK---- */
 
 

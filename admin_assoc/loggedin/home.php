@@ -62,15 +62,20 @@ require_once 'homeparts/reports.php';
 
         <div id="each-monthitems-display">
           <table>
-            <tr>
-            <th>Name</th>
-            <th>Category</th>
-            <th>Brand</th>
-            <th>CReq</th>
-            <th>PReq</th>
-            </tr>
-            <?php eachmonthitems();?>
+            <tbody>
+              <tr>
+              <th>Name</th>
+              <th>Category</th>
+              <th>Brand</th>
+              <th>CReq</th>
+              <th>PReq</th>
+              </tr>
+              <tr class="nom">
+
+              </tr>
+            </tbody>
           </table>
+
         </div>
 
       </div>

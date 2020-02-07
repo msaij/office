@@ -66,10 +66,9 @@ $(function(){
       url:"../loggedin/homeparts/reports.php",
       method:"POST",
       data:{nom:nameomonth},
-      success:function(nom)
+      success:function(data)
       {
-        alert(nom);
-        console.log(nom);
+        $('.nom').append(data);
       }
     });
   });
