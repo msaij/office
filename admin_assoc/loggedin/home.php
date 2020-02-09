@@ -15,6 +15,9 @@ require_once 'homeparts/reports.php';
 
   <body>
 
+<div id="left-right">
+
+
 <!--left side -------------------------------->
     <div class="whole-left">
       <div class="orders-ul-links">
@@ -62,17 +65,16 @@ require_once 'homeparts/reports.php';
 
         <div id="each-monthitems-display">
           <table> <!-- display tables for each month in 'ORDER' -->
-            <tbody>
+
               <tr>
               <th>Name</th>
               <th>Category</th>
               <th>Brand</th>
+              <th>Price/piece</th>
               <th>CReq</th>
               <th>PReq</th>
               </tr>
-              <tr class="nom">
-
-              </tr>
+            <tbody class="nom">
             </tbody>
           </table>
 
@@ -92,7 +94,30 @@ require_once 'homeparts/reports.php';
       </div>
       <!-- Years ends -->
 
+    </div> <!-- Right ends here -->
+
+
+<!--consolidated side ------------------------>
+    <div id="consolidated">
+      <table class="consol">
+        <tr>
+          <th>Name</th>
+          <th>Sum(cases req.)</th>
+          <th>Sum(pieces req.)</th>
+        </tr>
+        <tbody class="consoldata">
+
+        </tbody>
+      </table>
+
+    
+
     </div>
+
+
+
+</div> <!-- left-right ends here -->
+
 
   </body>
 </html>

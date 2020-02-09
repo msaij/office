@@ -1,23 +1,26 @@
 /* HIDE AND DISPLAY PART STARTS HERE for(ORDERS)------------------------------- */
 $(document).ready(function(){
   $(".monthslist").hide(); // hiding months (name) links
+  $(".consol").hide(); // hide consolidated table
 
   $(".orderslist").click(function(){
     $(".years-ul-display").hide(); //hide tables of YEARS
     $(".orders-ul-display").show(); //show tables of orders
     $(".monthslist").show(); //showing months (name) links
     $(".yearslist").hide();
+    $(".consol").show();
     //$(".whole-right").show(); // shows right side (as it is disabled when year is triggered)
   });
   $(".orderslist").dblclick(function(){
     $(".monthslist").hide(); //hide months name links
-    $("#every-monthsorders-display").hide(); //hiding every months consolidated order table
+    $("#every-monthsorders-display").hide(); //hiding every months order table
+    $(".consol").hide(); // hide consolidated table
   });
 });
 // hide or show the tables of each link
 // i.e showing the table of the link which is clicked
 $(document).ready(function(){
-  $("#every-monthsorders-display").hide(); //hiding every months consolidated order table
+  $("#every-monthsorders-display").hide(); //hiding every months order table
   $("#each-monthitems-display").hide(); //hiding each month order table
 
   $(".orderslist").click(function(){
@@ -27,6 +30,7 @@ $(document).ready(function(){
   $(".monthslist").click(function(){
     $("#each-monthitems-display").show(); //show eachmonth ordertable
     $("#every-monthsorders-display").hide(); //hide everymonth ordertable
+    $(".consol").show();
   });
 });
 /* HIDE AND DISPLAY PART ENDS HERE for(ORDERS)---------------------------- */
@@ -58,20 +62,25 @@ $(document).ready(function(){
 
 
 
-/* from here ->down -> to identify which month link is clicked under order and send it to db to get table */
+/* each month and everymonths table and consolidation */
 // $(document).ready(function(){ }) is equal to $(funciton(){ })
 $(function(){
   $(".monthslist li a").click(function(){
-    nameomonth=$(".mn:focus").text();
+    nameomonth=$(this).text();
     $.ajax({
       url:"../loggedin/homeparts/reports.php",
       method:"POST",
-      data:{nom:nameomonth},
+      data:{nom:nameomonth,nameofm:nameomonth},
       success:function(data)
       {
+        $('.monthdata').remove();
         $('.nom').append(data);
+        $('.consolrow').remove();
+        $('.consoldata').append(data);
       }
     });
   });
 });
+
+
 /* Till here------- */

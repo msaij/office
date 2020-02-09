@@ -2,7 +2,7 @@
 
 /* ---IT IS FOR 'ORDER' HEADER LINK--- */
 
-#getting the months in which it consists orders
+    #getting the months in which it consists orders
 function ulmonthname(){
   require 'db.php';
   $monthunorderlist="SELECT DISTINCT monthname(deliverydate) as monthname FROM cart;";
@@ -21,7 +21,7 @@ function ulmonthname(){
 }
 
 
-#every months orders.
+    #every months orders.
 function everymonthsitems()
 {
 require 'db.php';
@@ -49,35 +49,88 @@ else
     mysqli_close($conn);
 }
 
-#each months items orders.
+    #each months items orders.
 
 function eachmonthitems()
 {
   require 'db.php';
   if(isset($_POST['nom'])){
     $nom=$_POST['nom'];
-    $eachmonth = "SELECT name,category,brand,creq,preq FROM cart where monthname(deliverydate)='$nom';";
-
-  $result = mysqli_query($conn, $eachmonth);
-  if (mysqli_num_rows($result) > 0)
-  {
-      // output data of each row
+    $eachmonth = "SELECT name,category,brand,price_per_unit,creq,preq FROM cart where monthname(deliverydate)='$nom';";
+    $result = mysqli_query($conn, $eachmonth);
+    if (mysqli_num_rows($result) > 0)
+    {
+        // output data of each row
       while($row = mysqli_fetch_assoc($result))
       {
-        echo  "<td>". $row["name"]."</td><td>". $row["category"].
-              "</td><td>". $row["brand"]. "</td><td>". $row["creq"]. "</td><td>". $row["preq"]."</td>";
+        echo
+        "<tr class='monthdata'><td>".$row["name"]."</td>"."<td>". $row["category"].
+        "</td><td>". $row["brand"]."</td><td>".$row["price_per_unit"]."</td><td>". $row["creq"]. "</td><td>".
+        $row["preq"]."</td></tr>";
       }
+    }
+    else
+    {
+      echo "0 results";
+    }
+    return;
+    mysqli_close($conn);
   }
-  else
-  {
-    echo "0 results";
-  }
-  return;
-  mysqli_close($conn);
-}
 }
 eachmonthitems();
 /* ---TILL HERE IT IS FOR 'ORDER' HEADER LINK---- */
+
+
+// each month consolidation
+
+function consolidate()
+{
+  require 'db.php';
+  if(isset($_POST['nameofm'])){
+    $nameofm=$_POST['nameofm'];
+    $consolidate = "SELECT name,SUM(creq) as sumof_creq,sum(preq) as sumof_preq from cart WHERE monthname(deliverydate)='$nameofm' GROUP BY name;";
+    $result = mysqli_query($conn, $consolidate);
+    if (mysqli_num_rows($result) > 0)
+    {
+        // output data of each row
+      while($row = mysqli_fetch_assoc($result))
+      {
+        echo
+        "<tr class='consolrow'><td>".$row["name"]."</td>"."<td>". $row["sumof_creq"].
+        "</td><td>". $row["sumof_preq"]."</td></tr>";
+      }
+    }
+    else
+    {
+      echo "0 results";
+    }
+    return;
+    mysqli_close($conn);
+  }
+}
+consolidate();
+
+
+// all months consolidation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* ---FOR 'YEARS' HEADER LINK---- */
@@ -98,8 +151,6 @@ function ulyearnumbers(){
   return;
   mysqli_close($conn);
 }
-
-
 
 
 

@@ -8,7 +8,22 @@ ul#orders-ul,#years-ul{
   font-size: 18px;
   padding-left: 15px;
 }
+ul#orders-ul li,a{
+  width: 100px;
+}
 ul.monthslist,.yearslist{
   padding-left: 15px;
   font-size: 16px;
+}
+table{
+  padding: 5px;
+}
+#left-right{
+  display: grid;
+  grid-gap:3px;
+  grid-template-columns: 15% 45% 40%;
+  justify-content: flex-end;
+}
+.consoldata  tr.monthdata{
+  display: none;
 }
