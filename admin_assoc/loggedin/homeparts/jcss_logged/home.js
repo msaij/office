@@ -8,7 +8,7 @@ $(document).ready(function(){
     $(".orders-ul-display").show(); //show tables of orders
     $(".monthslist").show(); //showing months (name) links
     $(".yearslist").hide();
-    $(".consol").show();
+    $(".consol").hide();
     //$(".whole-right").show(); // shows right side (as it is disabled when year is triggered)
   });
   $(".orderslist").dblclick(function(){
@@ -46,6 +46,7 @@ $(document).ready(function(){
     $(".years-ul-display").show(); // show the tables of YEARS
     $(".yearslist").show(); //show list of years
     $(".monthslist").hide(); // hide the monthlist of ORDERS
+    $(".consol").hide();
   });
   $(".years").dblclick(function(){
     $(".yearslist").hide();
