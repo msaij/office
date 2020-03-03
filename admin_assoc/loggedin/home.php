@@ -15,6 +15,19 @@ require_once 'homeparts/reports.php';
 
   <body>
 
+<!-- inside home navigation starts -->
+<div class="top-navigation-forhome">
+  <div class="insidehome-nav">
+    <ul class="inhome-navlist">
+      <li>ORDERS</li>
+      <li>CLIENTS</li>
+      <li>CLIENT ASSOC ITEMS</li>
+    </ul>
+    <hr>
+  </div>
+</div>
+<!-- inside home navigation ends -->
+
 <div id="left-right">
 
 
@@ -110,7 +123,7 @@ require_once 'homeparts/reports.php';
         </tbody>
       </table>
 
-    
+
 
     </div>
 

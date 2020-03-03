@@ -53,17 +53,10 @@ $(document).ready(function(){
   });
 });
 
-
-
 /* HIDE AND DISPLAY PART ENDS HERE for(YEARS)---------------------------- */
 
 
-
-
-
-
-
-/* each month and everymonths table and consolidation */
+/* each month and everymonths table and consolidation from here*/
 // $(document).ready(function(){ }) is equal to $(funciton(){ })
 $(function(){
   $(".monthslist li a").click(function(){
@@ -82,6 +75,4 @@ $(function(){
     });
   });
 });
-
-
 /* Till here------- */

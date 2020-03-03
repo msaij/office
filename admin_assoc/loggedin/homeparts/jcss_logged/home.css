@@ -1,6 +1,15 @@
 a{
   color: blue;
 }
+.inhome-navlist {
+  list-style-type: none;
+  display: inline-flex;
+  padding: unset;
+  margin: unset;
+}
+.inhome-navlist li{
+  padding-left: 15px;
+}
 .monthslist li a:link:focus {
   color: black;
 }
