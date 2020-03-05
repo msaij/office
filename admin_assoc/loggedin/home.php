@@ -19,17 +19,17 @@ require_once 'homeparts/reports.php';
 <div class="top-navigation-forhome">
   <div class="insidehome-nav">
     <ul class="inhome-navlist">
-      <li>ORDERS</li>
-      <li>CLIENTS</li>
-      <li>CLIENT ASSOC ITEMS</li>
+      <li> <a href="#leftright">ORDERS</a> </li>
+      <li> <a href="#clientsdetails">CLIENTS</a> </li>
+      <li> <a href="#clientsitems">CLIENT ASSOC ITEMS</a> </li>
     </ul>
     <hr>
   </div>
 </div>
 <!-- inside home navigation ends -->
+<div id="bottom-fornav-data">
 
-<div id="left-right">
-
+<div class="left-right wholeorders-part" id="leftright"> <!-- ORDERS -->
 
 <!--left side -------------------------------->
     <div class="whole-left">
@@ -123,13 +123,19 @@ require_once 'homeparts/reports.php';
         </tbody>
       </table>
 
-
-
     </div>
 
+</div> <!-- left-right ends here (orders ends here)-->
 
+<div class="clientsdetails" id="clientsdetails">
 
-</div> <!-- left-right ends here -->
+</div>
+
+<div class="clientsitems" id="clientsitems">
+  client associated items will go here.
+</div>
+
+</div>
 
 
   </body>

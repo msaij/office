@@ -10,6 +10,20 @@ a{
 .inhome-navlist li{
   padding-left: 15px;
 }
+.inhome-navlist li a{
+  color: black;
+  text-decoration: none;
+}
+.left-right{
+  display: none;
+}
+.clientsitems{
+  display: none;
+}
+.clientsdetails{
+  display: none;
+}
+
 .monthslist li a:link:focus {
   color: black;
 }

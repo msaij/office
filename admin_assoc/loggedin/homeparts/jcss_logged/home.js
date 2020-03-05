@@ -76,3 +76,14 @@ $(function(){
   });
 });
 /* Till here------- */
+
+$(function(){
+  $(".inhome-navlist li a").click(function(){
+    ahref=$(this).attr('href');
+    $(ahref).show();
+    $(".inhome-navlist li a").dblclick(function(){
+      ahref=$(this).attr('href');
+      $(ahref).hide();
+    });
+  });
+});
